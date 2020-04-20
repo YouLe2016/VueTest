@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue双向绑定</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    输入的文本：<input type="text" v-model="msg"><br/>
+    {{msg}}
+    <hr/>
+    <textarea v-model="msg2"></textarea><br/>
+    {{msg2}}
+    <hr/>
+    性别:
+    <input type="radio" name="sex" value="男" v-model="sex">男
+    <input type="radio" name="sex" value="女" v-model="sex">女<br/>
+    {{sex}}
+    <hr/>
+    籍贯:
+    <select v-model="hometown">
+        <option value="" disabled>--请选择--</option>
+        <option>北京</option>
+        <option>上海</option>
+        <option>广州</option>
+        <option>深圳</option>
+    </select>
+    <div>{{hometown}}</div>
+</div>
+
+<script>
+    let vue = new Vue({
+        el: "#app",
+        data: {
+            msg: "vue",
+            msg2: "textarea",
+            sex: "男",
+            hometown: ""
+        }
+    });
+</script>
+
+</body>
+</html>

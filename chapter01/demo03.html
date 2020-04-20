@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue事件绑定</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <button v-on:click="sayHi">click me!</button>
+</div>
+
+<script>
+    let vue = new Vue({
+        el: "#app",
+        data: {
+            msg: "vue",
+        },
+        methods: {
+            sayHi: function () {
+                alert(this.msg);
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue基本语法</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h1 v-if="ok">Yes</h1>
+    <h1 v-else>No</h1>
+    <hr/>
+    <h1 v-if="type=='a'">a</h1>
+    <h1 v-else-if="type=='b'">b</h1>
+    <h1 v-else>c</h1>
+    <hr/>
+    <ol>
+        <li v-for="item in items">{{item.msg}}</li>
+    </ol>
+    <ul>
+        <li v-for="(item,index) in items">{{item.msg}}--{{index}}</li>
+    </ul>
+
+</div>
+
+<script>
+    let vue = new Vue({
+        el: "#app",
+        data: {
+            ok: true,
+            type: "a",
+            items: [
+                {msg: "java"},
+                {msg: "前端"},
+                {msg: "运维"},
+            ]
+        },
+    });
+</script>
+
+</body>
+</html>
